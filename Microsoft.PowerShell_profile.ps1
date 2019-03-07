@@ -5,7 +5,7 @@ $ShellSitzung.BackgroundColor = "White"
 $ShellSitzung.ForegroundColor = "Black"
 if((Get-Command Set-PSReadLineOption).Version.Major -lt 2)
 {
-Write-Host "erster Teil"
+Write-Verbose "PSReadlineV1"
 Set-PSReadlineOption -TokenKind Command   -ForegroundColor DarkBlue
 Set-PSReadlineOption -TokenKind Parameter -ForegroundColor Blue
 Set-PSReadlineOption -TokenKind Number    -ForegroundColor DarkRed
@@ -13,7 +13,7 @@ Set-PSReadlineOption -TokenKind Member    -ForegroundColor Gray
 }
 else
 {
-Write-Host "zweiter Teil"
+Write-Verbose "PSReadlineV2"
 Set-PSReadLineOption -Colors @{"Parameter" = [ConsoleColor]::Blue
                                "Command"   = [Consolecolor]::DarkBlue
                                "Number"    = [Consolecolor]::DarkRed
